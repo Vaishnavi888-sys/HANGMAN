@@ -1,0 +1,165 @@
+Project Report: Hangman Game
+Table of Contents
+
+1. Introduction
+2. Objectives
+3. Features
+4. System Requirements
+5. Design and Implementation
+6. Sample Code
+7. Testing
+8. Results
+9. Conclusion
+10. Future Scope
+
+
+1. Introduction
+
+Hangman is a word-guessing game that has been recreated in Python as a console-based application. The game involves players guessing letters to uncover a hidden word within a limited number of attempts. This project demonstrates the use of Python programming concepts such as loops, conditionals, string manipulation, and randomization.
+
+
+2. Objectives
+
+- To create an interactive and user-friendly console-based game.
+- To utilize core Python programming concepts in game development.
+- To provide a platform for learning and practicing programming through a fun project.
+
+
+3. Features
+
+- Dynamic Word Selection**: Words are randomly chosen from a predefined list.
+- Interactive Gameplay**: Players receive real-time feedback on their guesses.
+- ASCII Art Representation**: The hangman is visually represented in ASCII art to enhance the experience.
+- Customizable Word List**: Users can easily add their own words to the game.
+
+
+ 4. System Requirements
+
+- Programming Language**: Python 3.x
+- Operating System**: Windows, macOS, or Linux
+- IDE**: PyCharm, VSCode, or any text editor with Python support
+
+
+ 5. Design and Implementation
+
+5.1 Game Logic
+
+1. The program initializes by randomly selecting a word from a predefined list.
+2. It displays the word as underscores (`_`) to indicate the number of letters.
+3. The player guesses one letter at a time.
+4. For every incorrect guess, a part of the hangman is drawn.
+5. The game ends when:
+   - The player guesses the word correctly (win).
+   - The player runs out of attempts (lose).
+
+5.2 Key Components
+
+- Word List: A list of words stored in the program.
+- Random Module: Used for selecting a word at random.
+- ASCII Art: Provides visual feedback to the player.
+
+ 6. Sample Code
+
+
+import random
+print("HANGMAN GAME\n")
+
+HANGMANPICS = ['''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+  ========''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+  ========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+  ========''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+  ========''', '''
+  +---+
+  |   |
+  O   |
+ /|\\  |
+      |
+      |
+  ========''', '''
+  +---+
+  |   |
+  O   |
+ /|\\  |
+ /    |
+      |
+  ========''', '''
+  +---+
+  |   |
+  O   |
+ /|\\  |
+ / \\  |
+      |
+  ========''' ]
+
+lives = 5
+word_list = ["rose","tulip","lilly","lotus","jasmine"]
+chosen_word = random.choice(word_list)
+print(chosen_word)
+length = len(chosen_word)
+place_holder = ""
+for letter in chosen_word:
+    place_holder += "_"
+print(f"Here is your word : {place_holder}")
+game_over = False
+correct_letters = []
+while not game_over:
+    guess = input("Guess the letter: ").lower()
+    display = ""
+
+ 7. Testing
+
+The program was tested with multiple scenarios, including:
+
+- Correct guesses
+- Incorrect guesses
+- Winning and losing conditions
+- Edge cases, such as guessing the same letter multiple times
+
+All scenarios were handled successfully, ensuring smooth gameplay.
+
+
+ 8. Results
+
+The Hangman game works as intended, providing an interactive and engaging experience. Users can easily understand the rules and enjoy the gameplay.
+
+
+9. Conclusion
+
+This project demonstrates the implementation of a classic game using Python. It highlights the application of basic programming concepts and encourages further exploration in game development.
+
+
+10. Future Scope
+
+- Adding a graphical user interface (GUI) for a more immersive experience.
+- Implementing difficulty levels (e.g., easy, medium, hard).
+- Allowing players to input their own words for custom gameplay.
+- Adding a scoring system to track player performance.
+
+---
+
+**Prepared by:** vaishnavi srinivas
+
